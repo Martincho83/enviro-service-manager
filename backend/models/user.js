@@ -3,12 +3,10 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
-    //Un usuario pertenece a muchos Recursos a través de la tabla Permission
-      User.belongsToMany(models.Resource, {
-        through: models.Permissions,
-        foreignKey: 'userId',
-        otherKey: 'resourceId',
-        as: 'permissions'
+    // Un Técnico (User) puede tener muchas Órdenes de Trabajo asignadas
+      User.hasMany(models.WorkOrder, {
+        foreignKey: 'technicianId',
+        as: 'assignedWorkOrders'
       });
     }
   }
@@ -30,27 +28,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.ENUM('admin', 'tecnico'),
       allowNull: false,
       defaultValue: 'tecnico'
-    },
-    status:{
-      type: DataTypes.ENUM('active', 'inactive'),
-      allowNull: false,
-      defaultValue: 'active'
-    },
-    job_title: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    department: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    phone_number: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    photo_url: {
-      type: DataTypes.STRING,
-      allowNull: true
     },
   }, {
     sequelize,

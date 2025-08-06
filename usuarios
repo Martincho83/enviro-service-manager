@@ -1,0 +1,18 @@
+1 - Usuario Admin - admin@enviro.com - password123 -
+"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU0NTAxMzMyLCJleHAiOjE3NTQ1ODc3MzJ9.ewoV0tjj9HwXwsYN7HJqX7ew0H_BDbKP3FRgQhDXf3Y"
+
+2 - Usuario Tecnico - tecnico@enviro.com - password123 -
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InRlY25pY28iLCJpYXQiOjE3NTQ1MDEzOTgsImV4cCI6MTc1NDU4Nzc5OH0.Yj5MJZwUSO4YJV_H8IVzZHekxBcQKlnDXHzGsKe1SC0"
+    
+    DOCKER
+    
+    
+    + docker compose down
+    
+    + docker compose up -d --build
+    
+    + docker ps
+    
+    + docker compose logs -f backend
+    
+    + 

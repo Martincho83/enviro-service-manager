@@ -16,8 +16,18 @@ app.get('/', (req, res) => {
 const authRoutes = require('./routes/auth.routes');
 const userRoutes = require('./routes/user.routes');
 
+const administrationRoutes = require('./routes/administration.routes');
+const consortiumRoutes = require('./routes/consortium.routes');
+const quoteRoutes = require('./routes/quote.routes');
+const workOrderRoutes = require('./routes/workorder.routes');
+
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+
+app.use('/api/administrations', administrationRoutes);
+app.use('/api/consortiums', consortiumRoutes);
+app.use('/api/quotes', quoteRoutes);
+app.use('/api/work-orders', workOrderRoutes);
 
 const PORT = process.env.PORT || 8080;
 
